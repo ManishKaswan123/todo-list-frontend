@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# Full-Stack To-Do List Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack web application built with ReactJS for the frontend and NodeJS for the backend. The application includes user authentication (login/signup) and a simple to-do list with CRUD (Create, Read, Update, Delete) features. Only logged-in users can create and manage their to-do lists. The application is designed to be clean and responsive.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User Authentication (Login/Signup)
+- Create, Read, Update, and Delete To-Do Items
+- Responsive Design
+- Data Persistence with MongoDB
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Frontend: ReactJS
+- Backend: NodeJS, ExpressJS
+- Database: MongoDB
+- Authentication: JWT (JSON Web Tokens)
+- Styling: CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+- Node.js and npm installed
+- MongoDB installed and running
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### 1. Clone the Repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/your-username/todo-app.git
+cd todo-app
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Set Up the Backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Navigate to the backend directory:
+cd backend
 
-### `npm run eject`
+Install the dependencies:
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Create a .env file in the backend directory and add the following environment variables:
+PORT=4000
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/todo-app?retryWrites=true&w=majority
+JWT_SECRET=your_jwt_secret
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start the backend server:
+npm run dev
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Set Up the Frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Navigate to the frontend directory:
+cd ../frontend
 
-## Learn More
+Install the dependencies:
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Start the frontend development server:
+npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Access the Application
+Open your browser and navigate to http://localhost:3000 to access the application.
 
-### Code Splitting
+Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Backend
+server.js: Entry point for the backend server.
+models/: Contains Mongoose models for User and Todo.
+routes/: Contains Express routes for user authentication and todo operations.
+controllers/: Contains controller functions for handling requests.
+middleware/: Contains middleware for authentication.
 
-### Analyzing the Bundle Size
+Frontend
+src/: Contains the React application source code.
+components/: Contains reusable React components.
+pages/: Contains page components for different routes.
+context/: Contains the AuthContext for managing authentication state.
+utils/: Contains utility functions and components like PrivateRoute.
+App.js: Main application component.
+index.js: Entry point for the React application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+API Endpoints
+User Authentication
+POST /api/users/register: Register a new user.
+POST /api/users/login: Login a user and return a JWT token.
+GET /api/users/me: Get the authenticated user's profile.
 
-### Making a Progressive Web App
+To-Do Operations
+GET /api/todos: Get all to-dos for the authenticated user.
+POST /api/todos: Create a new to-do.
+PUT /api/todos/:id: Update a to-do.
+DELETE /api/todos/:id: Delete a to-do.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Running Tests
+To run tests, use the following command:
+npm test
 
-### Advanced Configuration
+Deployment
+To deploy the application, follow these steps:
+Build the frontend:
+cd frontend
+npm run build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Deploy the backend and the built frontend to your preferred hosting service (e.g., Heroku, Vercel).
+Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+License
+This project is licensed under the MIT License.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Acknowledgements
+.ReactJS
+.NodeJS
+.ExpressJS
+.MongoDB
+.JWT
